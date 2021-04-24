@@ -1,3 +1,7 @@
+# How to run
+docker build -f Dockerfile.dev -t yongsookim/docker-react-app ./
+docker run  -it -p 5555:3000 -v /usr/src/app/node_modules -v ${PWD}:/usr/src/app yongsookim/docker-react-app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
