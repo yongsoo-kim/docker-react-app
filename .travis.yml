@@ -9,7 +9,7 @@ service:
   - docker
 
 #스크립트 실행 준비
-before:
+before_install:
   - echo "start creating an image with dockerfile"
   - docker build -t yongsookim/docker-react-app -f Dockerfile.dev .
 
