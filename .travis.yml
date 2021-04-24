@@ -1,0 +1,22 @@
+#관리자 권한 갖기
+sudo: required
+
+#언어(플랫폼)을 선택
+language: generic
+
+#도커 환경 구성
+service:
+  - docker
+
+#스크립트 실행 준비
+before:
+  - echo "start creating an image with dockerfile"
+  - docker build -t yongsookim/docker-react-app -f Dockerfile.dev
+
+#실행할 스크립트
+script:
+  - docker run -e CI=true yongsookim/docker-react-app npm run test -- --coverage
+
+#테스트 성공후 로그 출력.
+after_success:
+  - echo "Test success"
