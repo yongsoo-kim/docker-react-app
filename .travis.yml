@@ -21,7 +21,6 @@ script:
 # after_success:
 #   - echo "Test success"
 
-
 deploy:
   edge: true
   provider: elasticbeanstalk
